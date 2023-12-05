@@ -1,0 +1,25 @@
+{
+  "name": "no-password-auth",
+  "version": "1.0.0",
+  "description": "An app inspired by webauthn and powered by passwordlessID to login into website without using a password",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon start"
+  },
+  "author": "Subu",
+  "license": "ISC",
+  "dependencies": {
+    "@passwordless-id/webauthn": "^1.3.1",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.2",
+    "nodemon": "^3.0.2",
+    "uuid": "^9.0.1"
+  }
+}

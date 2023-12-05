@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        font-family: sans-serif;
+      }
+      input {
+        height: 50px;
+        width: 240px;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background-color: rgb(231, 231, 231);
+      }
+      .buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+      }
+      button {
+        border: none;
+        outline: none;
+        background-color: rgb(255, 255, 255);
+        font-size: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 50px;
+        width: 100px;
+        transition: 0.2s;
+      }
+      button:hover {
+        background-color: rgb(0, 0, 0);
+        color: white;
+      }
+      .alert {
+        height: auto;
+        padding: 20px;
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 200px;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 30px;
+        display: flex;
+        justify-content: space-between;
+        transition: 0.3s;
+        max-width: 400px;
+      }
+      .containner {
+        height: auto;
+        width: 400px;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+        padding: 20px 20px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        background-color: rgb(9, 207, 174);
+      }
+      .title {
+        font-size: 30px;
+        font-weight: bold;
+        color: rgb(39, 39, 39);
+      }
+
+      .green {
+        background-color: rgb(21, 155, 21);
+        color: white;
+      }
+      .red {
+        background-color: rgb(155, 21, 21);
+        color: white;
+      }
+      .alert-wrapper {
+        height: auto;
+        width: 100%;
+        position: relative;
+      }
+      .close {
+        position: absolute;
+        right: -15px;
+        top: -15px;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.555);
+        color: rgb(255, 0, 64);
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+      .hidden {
+        opacity: 0;
+        top: -100px;
+      }
+    </style>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"
+      integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div id="alert" class="alert hidden">
+      <div class="alert-wrapper">
+        <div id="message" class="msg">hi</div>
+        <div class="close" onclick="closeAlert()">X</div>
+      </div>
+    </div>
+    <div class="containner">
+      <div class="title">FIDO2 AUTH</div>
+      <input id="username" type="text" placeholder="username" />
+      <div class="buttons">
+        <button id="register" onclick="functions.registerUser()">
+          Register
+        </button>
+        <button id="login" onclick="functions.loginUser()">Login</button>
+      </div>
+    </div>
+
+    <script>
+      const functions = {};
+      const alertMessage = document.getElementById("message");
+      const alert = document.getElementById("alert");
+      function closeAlert() {
+        document.getElementById("alert").classList.add("hidden");
+      }
+      function showInfo(message) {
+        alertMessage.innerHTML = message;
+        alert.classList.remove("hidden");
+        alert.classList.add("green");
+        alert.classList.remove("red");
+      }
+      function showAlert(message) {
+        alertMessage.innerHTML = message;
+        alert.classList.remove("hidden");
+        alert.classList.remove("green");
+        alert.classList.add("red");
+      }
+    </script>
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>
