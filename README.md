@@ -33,7 +33,7 @@ This web application demonstrates passwordless authentication using FIDO2 (Fast 
    ```
    npm start
    ```
-4. Open your web browser and visit http://localhost:3000 to access the application.
+4. Open your web browser and visit http://localhost:8080 (Or PORT in .env) to access the application.
    
 ## .env requirement
    ```env
