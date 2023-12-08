@@ -50,7 +50,7 @@ async function loginUser() {
           [res.data.cId],
           res.data.challenge,
           {
-            authenticatorType: "auto",
+            authenticatorType: "both",
             userVerification: "required",
             timeout: 60000,
           }
