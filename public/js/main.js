@@ -12,7 +12,7 @@ async function registerUser() {
           document.getElementById("username").value,
           res.data.challenge,
           {
-            authenticatorType: "auto",
+            authenticatorType: "both",
             userVerification: "required",
             timeout: 60000,
             attestation: false,
